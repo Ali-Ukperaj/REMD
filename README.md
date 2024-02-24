@@ -12,7 +12,6 @@ This package is centered around a python class defined in the file "REMD_Class.p
 1. The REMD is Continuous (data follows the specific model moving through exchanges as opposed to the simulation at a set temperature)
 2. All trajectory files are labeled exactly the same except for the number identifying which simulation it is (starting at 0 and increasing by 1)
 3. Trajectory format is .xtc
-4. 
 
 Each python script is developed in a separate file and set as a function. This function is then set as a method within the class (which, when called, will reference the function from the original, separate script). This is true for everything except my "Organize" (REMD_Disc_Tools/REMD_Organize) and "Demultiplex" (REMD_Disc_Tools/REMD_Demultiplex) functions. These are used in almost every method contained within this class, so rather than having them as their own methods and calling them each time I ran a separate method, I decided to just run them with the initialization of the class so and set their outputs as object attributes. Therefore, once an object is created, every method called from that point on will have access to this data. As of this time, I do not have any class attributes defined.
 
